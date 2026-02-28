@@ -19,7 +19,7 @@ class COciCommandBuilder extends CDbCommandBuilder
 	/**
 	 * @var integer the last insertion ID
 	 */
-	public $returnID;
+	public $returnID = 0;
 
 	/**
 	 * Returns the last insertion ID for the specified table.
