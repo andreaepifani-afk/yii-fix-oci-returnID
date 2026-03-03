@@ -109,6 +109,7 @@ EOD;
 		{
 			$sql.=' RETURNING '.$column->rawName.' INTO :RETURN_ID';
 			$command=$this->getDbConnection()->createCommand($sql);
+			$this->returnID = 0;
 			$command->bindParam(':RETURN_ID', $this->returnID, PDO::PARAM_INT, 12);
 			$table->sequenceName='RETURN_ID';
 		}
