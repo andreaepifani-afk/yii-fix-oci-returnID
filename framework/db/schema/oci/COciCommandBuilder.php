@@ -113,12 +113,7 @@ EOD;
 
 		$sql="INSERT INTO {$table->rawName} (".implode(', ',$fields).') VALUES ('.implode(', ',$placeholders).')';
 
-		if(is_string($table->primaryKey) && ($column=$table->getColumn($table->primaryKey))!==null && $column->type!=='string')
-		{
-			$command=$this->getDbConnection()->createCommand($sql);
-		}
-		else
-			$command=$this->getDbConnection()->createCommand($sql);
+		$command=$this->getDbConnection()->createCommand($sql);
 
 		foreach($values as $name=>$value)
 			$command->bindValue($name,$value);
